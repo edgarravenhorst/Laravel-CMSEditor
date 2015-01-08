@@ -1,6 +1,8 @@
 @import 'compass';
 @import "compass/css3/transform";
 
+@import "modules/split/editor";
+
 @mixin centerElement($type) {
     @if $type == "both"{
         position:absolute;
