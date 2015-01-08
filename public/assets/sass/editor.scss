@@ -43,7 +43,7 @@
         background:#f5f5f5;
         position:absolute;
         right:0;
-        width:300px;
+        width:350px;
         top:0;
         bottom:0;
         overflow: hidden;
@@ -51,8 +51,18 @@
         .inner{
             padding:25px;
             position:relative
-
         }
 
+        .modules{
+            padding:0;
+            .module{
+                background: #fff;
+                display:inline-block;
+                padding:35px;
+                margin-right:5px;
+                border:1px solid #ccc;
+                cursor:pointer;
+            }
+        }
     }
 }
