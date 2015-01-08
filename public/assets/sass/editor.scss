@@ -2,6 +2,7 @@
 @import "compass/css3/transform";
 
 @import "modules/split/editor";
+@import "modules/navigation/editor";
 
 @mixin centerElement($type) {
     @if $type == "both"{
