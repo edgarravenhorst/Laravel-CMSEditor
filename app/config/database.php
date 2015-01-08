@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'mytrainr.nl',
-            'database'  => 'mytrainr_cmsedit',
-            'username'  => 'mytrainr_cmsedit',
-            'password'  => 'kGE94-n1',
+			'database'  => 'mytrainr_cmsedit',
+			'username'  => 'mytrainr_cmsedit',
+			'password'  => 'kGE94-n1',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

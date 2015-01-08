@@ -1,10 +1,10 @@
 <?php
 
-class ModuleOnecontroller extends BaseController {
+class Mod_SplitController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| ModuleOnecontroller
+	| Mod_SplitController
 	|--------------------------------------------------------------------------
 	|
 	| You may wish to use controllers instead of, or in addition to, Closure
