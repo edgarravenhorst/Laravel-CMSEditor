@@ -18,9 +18,13 @@
 <![endif]-->
 
     </head>
-    <body ng-app='CMS_Editor' ng-controller="moduleController" id='CMS_Editor'>
+    <body ng-app='CMS_Editor' ng-controller="interfaceController" id='CMS_Editor'>
 
         @yield('cmsWrapper')
+
+        <section id='cms-editor-interface'>
+            @include('cms.layout.interface.module-select')
+        </section>
 
         <script src="{{ URL::asset('assets/js/global.js') }}"></script>
         <script src="{{ URL::asset('assets/js/cms/cms.js') }}"></script>
