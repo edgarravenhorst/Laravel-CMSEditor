@@ -40,12 +40,14 @@
 
 #cms-editor-interface {
     #module-select {
+        @include single-transition(all, 0.4s);
         background:#f5f5f5;
         position:absolute;
         right:0;
         width:350px;
         top:0;
         bottom:0;
+        @include translateX(350px);
         overflow: hidden;
 
         .inner{
@@ -64,5 +66,9 @@
                 cursor:pointer;
             }
         }
+    }
+
+    #module-select.visible {
+        @include translateX(0);
     }
 }

@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('cms.index');
 });
+
+
+Route::get('/getView/{name}', function($name)
+{
+    return View::make('cms.modules.' . $name . '.index');
+});
