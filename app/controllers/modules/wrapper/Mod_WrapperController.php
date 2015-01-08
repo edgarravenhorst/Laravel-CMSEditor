@@ -1,6 +1,6 @@
 <?php
 
-class ModuleTwocontroller extends BaseController {
+class Mod_WrapperController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
