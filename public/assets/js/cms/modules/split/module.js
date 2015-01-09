@@ -61,34 +61,3 @@ function ModuleSplitCtrl($scope, $compile, moduleService){
 };
 
 CMS_Editor.controller( "moduleSplitController", ['$scope', '$compile', 'moduleService', ModuleSplitCtrl] )
-
-/*
-$('#module-split button').click(function(e){
-
-    $('#cms-editor-interface').append('<span class="splitLine"></span>');
-    $('#module-select').removeClass('visible');
-    $(".wrapper").mousemove(function(e) {
-
-        $('.splitLine').css('left', e.pageX);
-
-    })
-
-
-    $(".splitLine").click(function(e) {
-        $(".wrapper").unbind('mousemove');
-        $('.splitLine').css('left', e.pageX);
-        $('#module-select').addClass('visible');
-
-        var html1 = '<section class="wrapper" style="position:absolute; left:0; right:'+ ($(".wrapper").outerWidth() - e.pageX) +'px; top:0; bottom:0;"></section>'
-        var html2 = '<section class="wrapper" style="position:absolute; left:' + e.pageX + 'px; right:0; top:0; bottom:0;"></section>'
-
-        $(".wrapper").append(html1);
-        $(".wrapper").append(html2);
-
-        $('.splitLine').hide();
-        $('.wrapper').remove('.btn-add-module');
-        $('.wrapper .wrapper').append('<button class="btn-add-module" ng-click="show(\'#module-select\')"></button>');
-    })
-
-});
-*/
