@@ -1,5 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,800,700);
+
 @import 'compass';
 @import "compass/css3/transform";
+@import "compass/css3/border-radius";
 
 @import "modules/split/editor";
 @import "modules/navigation/editor";
@@ -27,7 +30,26 @@
 
 body {
     overflow:hidden;
+    font-family: 'Open Sans', sans-serif;
 }
+
+button {
+    padding:10px 20px;
+    margin:5px 5px;
+    background-color:#555;
+    @include border-radius(4px, 4px);
+    border:none;
+    color:#eee;
+    outline: none;
+    cursor: pointer;
+    font-weight:bold;
+
+    &:hover{
+        background-color:#fff;
+        color:#555;
+    }
+}
+
 .wrapper {
     position:absolute;
     left:0;
@@ -45,16 +67,29 @@ body {
         width:0;
         height:0;
         z-index: 888;
+        margin:0;
+        &:hover{
+            background-color:#777;
+        }
     }
 
     .handle-right {
         @include centerElement('vertical');
         right:-5px;
+        height: 25px;
     }
 
     .handle-bottom {
         @include centerElement('horizontal');
         bottom:-5px;
+        width: 25px;
+    }
+
+    &.active {
+        background-color:#f5f5f5;
+        .btn-add-module {
+            background-color: #fff;
+        }
     }
 }
 
@@ -63,14 +98,25 @@ body {
     background-color:#f5f5f5;
     color:#555;
     padding:25px;
+    margin:0;
     border:1px dashed #ccc;
+    background-image: url('../images/addition_icon.png');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    outline: none;
+    &:hover{
+        background-color:#555;
+        background-image: url('../images/addition_icon_light.png');
+    }
 }
 
 #cms-editor-interface {
 
     #module-select {
         @include single-transition(all, 0.4s);
-        background:#f5f5f5;
+        background:#eee;
         position:absolute;
         right:0;
         width:350px;

@@ -1,4 +1,5 @@
 
+
 ModuleService = function($rootScope) {
     var service = {};
     service.currentModule = '';
@@ -91,9 +92,7 @@ function InterfaceCtrl($scope, $compile, moduleService){
                 wrapcontainer.unbind('mousemove');
             });
         })
-
-
-    }
+    };
 
     $scope.compileChildWrappers = function(){
         $compile($('.btn-add-module'))($scope);
@@ -102,6 +101,7 @@ function InterfaceCtrl($scope, $compile, moduleService){
     $scope.createAddModuleButton($('.wrapper'));
 
     $scope.addModule = function($event, name) {
+        $($event.target.parentElement).addClass('active');
         moduleService.currentElem = $event.target.parentElement;
         $scope.activeWindow = name;
         $('.module').removeClass('visible');

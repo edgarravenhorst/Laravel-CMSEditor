@@ -3,7 +3,7 @@
 @section('cmsWrapper')
 
 
-<section class='wrapper'>
+<section id='cms_container' class='wrapper'>
 
 </section>
 

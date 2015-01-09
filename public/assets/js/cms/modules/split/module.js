@@ -50,6 +50,7 @@ function ModuleSplitCtrl($scope, $compile, moduleService){
             $(moduleService.currentElem).append(html1);
             $(moduleService.currentElem).append(html2);
 
+            $(moduleService.currentElem).removeClass('active');
             $('.splitLine').remove();
 
             $scope.$parent.createAddModuleButton($(moduleService.currentElem).find('.wrapper'));
