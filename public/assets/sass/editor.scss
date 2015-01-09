@@ -39,6 +39,23 @@ body {
     box-sizing:border-box;
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
+
+    .handle {
+        padding:5px;
+        width:0;
+        height:0;
+        z-index: 888;
+    }
+
+    .handle-right {
+        @include centerElement('vertical');
+        right:-5px;
+    }
+
+    .handle-bottom {
+        @include centerElement('horizontal');
+        bottom:-5px;
+    }
 }
 
 .btn-add-module {
