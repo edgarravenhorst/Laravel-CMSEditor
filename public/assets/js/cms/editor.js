@@ -101,6 +101,7 @@ function InterfaceCtrl($scope, $compile, moduleService){
     $scope.createAddModuleButton($('.wrapper'));
 
     $scope.addModule = function($event, name) {
+        $('.wrapper').removeClass('active');
         $($event.target.parentElement).addClass('active');
         moduleService.currentElem = $event.target.parentElement;
         $scope.activeWindow = name;

@@ -34,6 +34,7 @@ body {
 }
 
 button {
+    @include single-transition(all, 0.2s);
     padding:10px 20px;
     margin:5px 5px;
     background-color:#555;
@@ -51,6 +52,7 @@ button {
 }
 
 .wrapper {
+    @include single-transition(all, 0.2s);
     position:absolute;
     left:0;
     right:0;
