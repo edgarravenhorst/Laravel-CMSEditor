@@ -1,6 +1,10 @@
 <aside ng-controller="moduleController" id='module-select'>
     <section class='inner'>
-        <div ng-if='moduleView'><div ng-include='moduleView'/></div></div>
+        <div ng-if='moduleView'>
+            <button ng-click='deActivateModule()'>Done</button>
+            <hr>
+            <div ng-include='moduleView'/></div>
+        </div>
 
         <div ng-if='!moduleView'>
             <h2>Module Select</h2>

@@ -7,6 +7,3 @@
     <button ng-click='split("vertical")' class='orientation'>Split Vertical</button>
     <br />
 </section>
-<hr>
-<br />
-<button ng-click='deActivateModule()'>Done</button>

@@ -55,7 +55,6 @@ function ModuleSplitCtrl($scope, $compile, moduleService){
             $scope.$parent.createAddModuleButton($(moduleService.currentElem).find('.wrapper'));
             $(moduleService.currentElem).unbind('click');
 
-            $('#module-select').addClass('visible');
         })
     }
 };
