@@ -1,27 +1,45 @@
-$('.wrapper').append('<button class="btn-add-module" ng-click="show(\'#module-select\')"></button>');
 
-
-function ModuleCtrl($scope, $http){
-    $scope.ActivateModule = function(name) {
-
-        $http.get('getView/' + name).
-        success(function(data, status, headers, config) {
-            $('#module-select').html(data);
-        }).
-        error(function(data, status, headers, config) {
-            console.log(data);
-        });
-
-    };
+ModuleService = function($rootScope) {
+    var service = {};
+    service.currentModule = '';
+    service.activeWindow = '';
+    service.currentElem;
+    return service;
 };
 
-
-function InterfaceCtrl($scope){
-    $scope.show = function(name) {
-
-        $(name).addClass('visible');
-
+function ModuleCtrl($scope, $http){
+    $scope.moduleView = false;
+    $scope.activateModule = function($event, name) {
+        $scope.activeModule = name;
+        $scope.moduleView = 'getView/' + name;
     };
+    $scope.deActivateModule = function($event, name) {
+        $scope.activeModule = false;
+        $scope.moduleView = false;
+    }
+};
+
+function InterfaceCtrl($scope, $compile, moduleService){
+
+    $scope.createAddModuleButton = function(container){
+        container.parent('.wrapper').find('.btn-add-module').remove();
+        var btnhtml = '<button class="btn-add-module" ng-click="addModule($event, \'#module-select\')"></button>'
+        var temp = $compile(btnhtml)($scope);
+        container.append(temp);
+    }
+
+    $scope.compileChildWrappers = function(){
+        $compile($('.btn-add-module'))($scope);
+    }
+
+    $scope.createAddModuleButton($('.wrapper'));
+
+    $scope.addModule = function($event, name) {
+        moduleService.currentElem = $event.target.parentElement;
+        $scope.activeWindow = name;
+        $('.module').removeClass('visible');
+        $(name).addClass('visible');
+    }
 };
 
 var CMS_Editor = angular.module('CMS_Editor', [], function($interpolateProvider) {
@@ -29,5 +47,6 @@ var CMS_Editor = angular.module('CMS_Editor', [], function($interpolateProvider)
     $interpolateProvider.endSymbol(']]');
 });
 
-CMS_Editor.controller( "interfaceController", InterfaceCtrl )
+CMS_Editor.factory('moduleService', ModuleService);
+CMS_Editor.controller( "interfaceController", ['$scope', '$compile', 'moduleService', InterfaceCtrl] )
 CMS_Editor.controller( "moduleController", ['$scope', '$http', ModuleCtrl] )

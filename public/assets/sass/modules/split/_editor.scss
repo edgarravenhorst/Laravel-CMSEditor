@@ -1,8 +1,20 @@
-.splitline {
-    position:fixes;
+.splitLine {
+    display:block;
+    position:absolute;
+    pointer-events: none;
+    background-color:red;
+}
+
+.splitLine.horizontal {
+    top:0;
+    right:0;
+    left:0;
+    height:2px;
+}
+
+.splitLine.vertical {
     top:0;
     bottom:0;
-    left:200px;
-    background-color:red;
+    left:0;
     width:2px;
 }

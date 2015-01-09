@@ -25,12 +25,20 @@
     }
 }
 
+body {
+    overflow:hidden;
+}
 .wrapper {
     position:absolute;
     left:0;
     right:0;
     top:0;
     bottom:0;
+    border:1px dashed #e5e5e5;
+    margin:-1px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
 
 .btn-add-module {
@@ -42,6 +50,7 @@
 }
 
 #cms-editor-interface {
+
     #module-select {
         @include single-transition(all, 0.4s);
         background:#f5f5f5;

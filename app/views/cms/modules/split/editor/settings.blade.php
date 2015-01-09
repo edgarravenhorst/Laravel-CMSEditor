@@ -1,12 +1,10 @@
-<section id='module-split' class='module'>
+<section ng-app='moduleSplit' ng-controller='moduleSplitController' id='module-split' class='module'>
 
-    <h2>Split</h2>
-    <button><back</button>
+    <h2>Split - [[test]]</h2>
 
-    <button class='orientation'>Split Horizontal</button>
+    <button ng-click='split("horizontal")' class='orientation'>Split Horizontal</button>
     <br />
-    <button class='orientation'>Split Vertical</button>
-
-    <script src="{{ URL::asset('assets/js/cms/modules/split/module.js') }}"></script>
+    <button ng-click='split("vertical")' class='orientation'>Split Vertical</button>
 
 </section>
+

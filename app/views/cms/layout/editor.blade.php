@@ -29,6 +29,10 @@
         <script src="{{ URL::asset('assets/js/global.js') }}"></script>
         <script src="{{ URL::asset('assets/js/cms/cms.js') }}"></script>
         <script src="{{ URL::asset('assets/js/cms/editor.js') }}"></script>
+
+        @foreach(Module::All() as $module)
+        <script src="{{ URL::asset('assets/js/cms/modules/' . $module->name . '/module.js') }}"></script>
+        @endforeach
     </body>
 
 </html>
