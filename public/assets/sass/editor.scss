@@ -52,7 +52,7 @@ button {
 }
 
 .wrapper {
-    @include single-transition(all, 0.2s);
+    @include single-transition(background-color, 0.2s);
     position:absolute;
     left:0;
     right:0;
