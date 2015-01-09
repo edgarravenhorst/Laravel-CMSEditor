@@ -73,19 +73,17 @@ function InterfaceCtrl($scope, $compile, moduleService){
 
             wrapcontainer.mousemove(function(e){
                 offsetX = e.clientX - wrapcontainer.offset().left;
-                offsetY = e.clientY - wrapcontainer.offset().top;
+                offsetY = e.clientY - wrapcontainer.offset().top + $(document).scrollTop();
 
                 if (position.right > 0){
                     wrapper1.css('right', 100-(offsetX/wrapcontainer.outerWidth())*100 + '%');
                     wrapper2.css('left', (offsetX/wrapcontainer.outerWidth())*100 + '%');
                 }
-
+                console.log($(document).scrollTop());
                 if (position.bottom > 0){
                     wrapper1.css('bottom', 100-(offsetY/wrapcontainer.outerHeight())*100 + '%');
-                    wrapper2.css('top', (offsetY/wrapcontainer.outerHeight())*100 + '%');
+                    wrapper2.css('top', ((offsetY)/wrapcontainer.outerHeight())*100 + '%');
                 }
-
-
             })
 
             $(document).mouseup(function(e){
