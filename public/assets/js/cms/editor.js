@@ -7,12 +7,13 @@ ModuleService = function($rootScope) {
     return service;
 };
 
-function ModuleCtrl($scope, $http){
+function ModuleCtrl($scope, $http, moduleService){
     $scope.moduleView = false;
     $scope.activateModule = function($event, name) {
         $scope.activeModule = name;
         $scope.moduleView = 'getView/' + name;
     };
+
     $scope.deActivateModule = function($event, name) {
         $scope.activeModule = false;
         $scope.moduleView = false;
@@ -49,4 +50,4 @@ var CMS_Editor = angular.module('CMS_Editor', [], function($interpolateProvider)
 
 CMS_Editor.factory('moduleService', ModuleService);
 CMS_Editor.controller( "interfaceController", ['$scope', '$compile', 'moduleService', InterfaceCtrl] )
-CMS_Editor.controller( "moduleController", ['$scope', '$http', ModuleCtrl] )
+CMS_Editor.controller( "moduleController", ['$scope', '$http', 'moduleService', ModuleCtrl] )
