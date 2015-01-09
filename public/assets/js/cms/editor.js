@@ -56,9 +56,13 @@ function InterfaceCtrl($scope, $compile, moduleService){
             var wrapcontainer = wrapper1.parent()
             var wrapper2 = wrapcontainer
 
-            $.each(wrapcontainer.children(), function(i,wrapper){
-                if (wrapper != wrapper1)
+            console.log(wrapcontainer, wrapper1, wrapper2);
+
+            $.each(wrapcontainer.children('.wrapper'), function(i,wrapper){
+                console.log(i)
+                if (wrapper !== wrapper1) {
                     wrapper2 = $(wrapper);
+                }
             })
 
             var position = {
@@ -67,8 +71,8 @@ function InterfaceCtrl($scope, $compile, moduleService){
             }
 
             wrapcontainer.mousemove(function(e){
-                offsetX = e.clientX - wrapcontainer.position().left;
-                offsetY = e.clientY - wrapcontainer.position().top;
+                offsetX = e.clientX - wrapcontainer.offset().left;
+                offsetY = e.clientY - wrapcontainer.offset().top;
 
                 if (position.right > 0){
                     wrapper1.css('right', 100-(offsetX/wrapcontainer.outerWidth())*100 + '%');
