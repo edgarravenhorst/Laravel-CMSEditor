@@ -51,6 +51,13 @@ button {
     }
 }
 
+#cms_container {
+    height:1200px !important;
+    &.wrapper{
+
+    }
+}
+
 .wrapper {
     @include single-transition(background-color, 0.2s);
     position:absolute;
@@ -119,7 +126,7 @@ button {
     #module-select {
         @include single-transition(all, 0.4s);
         background:#eee;
-        position:absolute;
+        position:fixed;
         right:0;
         width:350px;
         top:0;
