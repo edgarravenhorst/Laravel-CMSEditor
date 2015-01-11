@@ -24,9 +24,11 @@ function ModuleCtrl($scope, $http, moduleService){
 function InterfaceCtrl($scope, $compile, moduleService){
 
     $scope.createAddModuleButton = function(container){
-        container.parent('.wrapper').find('.btn-add-module').remove();
+        container.parent().find('.btn-add-module').remove();
         var btnhtml = '<button class="btn-add-module" ng-click="addModule($event, \'#module-select\')"></button>'
-        container.append($compile(btnhtml)($scope));
+        container.filter(function(){
+            return $(this).children('.wrapper').length == 0
+        }).append($compile(btnhtml)($scope));
 
 
         $('.wrapper').find('.handle').remove();
@@ -57,10 +59,7 @@ function InterfaceCtrl($scope, $compile, moduleService){
             var wrapcontainer = wrapper1.parent()
             var wrapper2 = wrapcontainer
 
-            console.log(wrapcontainer, wrapper1, wrapper2);
-
             $.each(wrapcontainer.children('.wrapper'), function(i,wrapper){
-                console.log(i)
                 if (wrapper !== wrapper1) {
                     wrapper2 = $(wrapper);
                 }
@@ -88,8 +87,58 @@ function InterfaceCtrl($scope, $compile, moduleService){
 
             $(document).mouseup(function(e){
                 wrapcontainer.unbind('mousemove');
+                $scope.saveLayout();
             });
         })
+    };
+
+    $scope.saveLayout = function(){
+        data = {
+            '_token': $('meta[name=_token]').attr('content'),
+            layout:[],
+            sass:'',
+            html:''
+        };
+
+        $('.wrapper').each(function(i, wrapper){
+            if(i!=0)$(wrapper).attr('id', 'wrap-' + i)
+        });
+
+        sass = '#cms_container {\n';
+        $('.wrapper').each(function(i, wrapper){
+            var wrapStyle = $(wrapper).attr('style');
+
+            var wrapperData = {
+                id:$(wrapper).attr('id'),
+                parent:$(wrapper).parent().attr('id')
+            }
+            data.layout.push(wrapperData);
+
+            if(wrapStyle) {
+                sass += '\t#wrap-' + i + '{';
+                sass += wrapStyle;
+                sass += '}\n'
+            }
+        });
+
+        sass += '}'
+
+        data.sass = sass;
+
+        temphtml = $('#cms_container').clone();
+        temphtml.find('.wrapper').contents().filter(function () {
+            return $(this).attr('class') != 'wrapper';
+        }).remove();
+        data.html += temphtml.html();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        $.post('writelayoutfiles/', data);
+
     };
 
     $scope.compileChildWrappers = function(){

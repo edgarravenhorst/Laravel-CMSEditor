@@ -21,3 +21,7 @@ Route::get('/getView/{name}', function($name)
 {
     return View::make('cms.modules.' . $name . '.editor.settings');
 });
+
+Route::group(['before' => 'csrf'], function() {
+    Route::post('/writelayoutfiles/', array('as' => 'writelayoutfiles', 'uses' => 'Mod_SplitController@writeLayoutFiles'));
+});

@@ -2,16 +2,23 @@
 
 class Mod_SplitController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Mod_SplitController
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|
-	*/
+
+    public function writeLayoutFiles($ftype='sass'){
+
+        $style = Input::get('sass');
+        $htmlTemplate = Input::get('html');
+
+        $bytes_written = File::put(public_path() . '/assets/sass/modules/split/_layouts.scss', $style);
+        if ($bytes_written === false)
+        {
+            die("Error writing to file");
+        }
+
+        $bytes_written = File::put(app_path() . '/views/cms/modules/split/generated/template.blade.php', $htmlTemplate);
+        if ($bytes_written === false)
+        {
+            die("Error writing to file");
+        }
+    }
 
 }
