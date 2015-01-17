@@ -25,3 +25,6 @@ Route::get('/getView/{name}', function($name)
 Route::group(['before' => 'csrf'], function() {
     Route::post('/writelayoutfiles/', array('as' => 'writelayoutfiles', 'uses' => 'Mod_SplitController@writeLayoutFiles'));
 });
+
+
+// Route::get('category/{name}','CategoryController@show');

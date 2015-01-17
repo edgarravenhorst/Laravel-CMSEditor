@@ -1,7 +1,7 @@
 <section id="modules-navigation" ng-controller="navigationController" class='navigation'>
 
         Orientation:<br>
-        <input type="radio" ng-model="orientation" id="orientation" value="horizontal">Horizontal<br>
+        <input type="radio" ng-model="orientation" id="orientation" value="horizontal" checked="checked">Horizontal<br>
         <input type="radio" ng-model="orientation" id="orientation" value="vertical">Vertical<br><br><br>
 
         <label for="name">Name:</label>
