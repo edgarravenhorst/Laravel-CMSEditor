@@ -1,2 +1,0 @@
-
-    <section class="wrapper" style="position: absolute; left: 0%; right: 0%; top: 0%; bottom: 83.1494483450351%;" id="wrap-1"></section><section class="wrapper" style="position: absolute; left: 0%; right: 0%; top: 16.8505516549649%; bottom: 0%;" id="wrap-2"><section class="wrapper" style="position: absolute; left: 0%; right: 78.1997918834547%; top: 0%; bottom: 0%;" id="wrap-3"></section><section class="wrapper" style="position: absolute; left: 21.8002081165453%; right: 0%; top: 0%; bottom: 0%;" id="wrap-4"></section></section>

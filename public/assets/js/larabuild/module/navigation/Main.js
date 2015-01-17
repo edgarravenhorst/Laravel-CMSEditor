@@ -1,10 +1,18 @@
-require(['require','module/navigation/NavigationController'], function(require){
+define
+(
+    function(require){
 
-   // var editor = require('editor')
-   // var splitController = require('module/navigation/NavigationController')
+        function Module(){
 
-        //editor.controller( "moduleSplitController", ['$scope', '$compile', 'moduleService', splitController] )
-        //editor.controller('layoutCtrl', layoutController);
-        //return LayoutModule;
+            this.name = 'ImagesModule'
+
+            this.register = function(){
+                var editor = require('editor')
+                var navigationController = require('module/navigation/NavigationController')
+                editor.controller( "navigationController", ['$scope', '$compile', 'moduleService', navigationController] )
+            }
+        }
+
+        return new Module();
     }
 );

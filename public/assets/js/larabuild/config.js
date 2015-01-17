@@ -13,11 +13,14 @@ require.config({
   }
 });
 
-require(['editor'],
+require(['editor', 'modules'],
   function(editor, modules) {
 
-    console.log(editor);
+    modules.register();
+
     angular.bootstrap(document, ['CMS_Editor']);
+
+
 
   }
 );
