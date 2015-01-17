@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/voorbeeld', array('as' => 'voorbeeld', 'uses' => 'VoorbeeldController@index'));
+
 Route::get('/', function()
 {
 	return View::make('cms.index');
@@ -25,3 +27,5 @@ Route::get('/getView/{name}', function($name)
 Route::group(['before' => 'csrf'], function() {
     Route::post('/writelayoutfiles/', array('as' => 'writelayoutfiles', 'uses' => 'Mod_SplitController@writeLayoutFiles'));
 });
+
+
