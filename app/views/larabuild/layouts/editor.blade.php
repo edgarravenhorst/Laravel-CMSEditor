@@ -24,7 +24,7 @@
         @yield('cmsWrapper')
 
         <section id='cms-editor-interface'>
-            @include('cms.layout.interface.module-select')
+            @include('larabuild.layouts.interface.module-select')
         </section>
 
         <script data-main="{{ URL::asset('assets/js/larabuild/config') }}" src={{ URL::asset('assets/js/require.min.js') }}></script>

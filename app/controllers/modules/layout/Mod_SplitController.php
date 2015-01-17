@@ -8,13 +8,13 @@ class Mod_SplitController extends BaseController {
         $style = Input::get('sass');
         $htmlTemplate = Input::get('html');
 
-        $bytes_written = File::put(public_path() . '/assets/sass/modules/split/_layouts.scss', $style);
+        $bytes_written = File::put(public_path() . '/assets/sass/modules/layout/_layouts.scss', $style);
         if ($bytes_written === false)
         {
             die("Error writing to file");
         }
 
-        $bytes_written = File::put(app_path() . '/views/cms/modules/split/generated/template.blade.php', $htmlTemplate);
+        $bytes_written = File::put(app_path() . '/views/larabuild/template.blade.php', $htmlTemplate);
         if ($bytes_written === false)
         {
             die("Error writing to file");
