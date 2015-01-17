@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('cms.index');
+	return View::make('larabuild.index');
 });
 
 
