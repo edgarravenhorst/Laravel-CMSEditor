@@ -1,19 +1,24 @@
-<section id="modules-navigation" class='navigation'>
+<section id="modules-navigation" ng-controller="navigationController" class='navigation'>
 
-    <form method="" id="myForm">
+        Orientation:<br>
+        <input type="radio" ng-model="orientation" id="orientation" value="horizontal" checked="checked">Horizontal<br>
+        <input type="radio" ng-model="orientation" id="orientation" value="vertical">Vertical<br><br><br>
 
-        Choose an orientation:<br>
-        <input type="radio" name="orientation" value="horizontal">Horizontal<br>
-        <input type="radio" name="orientation" value="vertical">Vertical<br><br><br>
+        <label for="name">Name:</label>
+        <input type="text" ng-model="name" name="name"/><br/>
+        <label for="name">Action:</label>
+        <input type="text" ng-model="action" name="action"/><br/>
 
-        Type of buttons:<br>
-        <input type="radio" name="buttons_type" value="small">Small<br>
-        <input type="radio" name="buttons_type" value="medium">Medium<br>
-        <input type="radio" name="buttons_type" value="big">Big<br><br>
+        <button ng-click="addNavItem()">+</button>
 
-        <input type="button" value="activate" name="submit" id="submit"/>
+        <h2>Navigation items</h2>
+        <div id="nav-items" style="border:1px dashed #ccc;">
+            <ul>
+                <li ng-repeat="item in items">[[item.name]] ([[item.action]]) <button ng-click="removeNavItem([[$index]])">-</button></li>
+            </ul>
+        </div>
 
-    </form>
+        <button ng-click="add(orientation)">Add</button>
 
 </section>
 

@@ -1,5 +1,3 @@
-
-
 ModuleService = function($rootScope) {
     var service = {};
     service.currentModule = '';
