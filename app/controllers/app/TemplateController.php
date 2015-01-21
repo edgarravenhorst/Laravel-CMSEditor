@@ -4,7 +4,7 @@ class TemplateController extends BaseController {
 
 	 public function getView($container){
 
-         $template = Templates::where('container','=',$container);
+         $template = Templates::where('view','=',$container);
         return View::make('template.partials.'.$template->first()->view);
 
      }
