@@ -14,7 +14,7 @@ define([], function() {
 
         $scope.loadViews = function(){
             angular.forEach($scope.templateJson, function(tmptPart, key) {
-                $('#'+tmptPart.container).append($compile('<ng-include src="\'getTemplateView/'+ tmptPart.view +'\'">peer</ng-include>')($scope))
+                $('#'+tmptPart.container).prepend($compile('<ng-include src="\'getTemplateView/'+ tmptPart.view +'\'">peer</ng-include>')($scope))
             });
         }
 
