@@ -7,7 +7,7 @@ define([], function() {
 
         $scope.getURL = function(){
             console.log(this)
-            return 'getviewByContainer/wrap-1'
+            return 'getViewByContainer/wrap-1'
         }
 
         $scope.loadViews = function(){

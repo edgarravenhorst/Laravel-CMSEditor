@@ -104,9 +104,7 @@ define([], function() {
             data.sass = sass;
 
             temphtml = $('#cms_container').clone();
-            temphtml.find('.wrapper').contents().filter(function () {
-                return $(this).attr('class') != 'wrapper';
-            }).remove();
+
             data.html += temphtml.html();
 
             $.ajaxSetup({

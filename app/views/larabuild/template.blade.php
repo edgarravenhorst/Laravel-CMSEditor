@@ -1,6 +1,10 @@
 
-<<<<<<< HEAD
-    <section class="wrapper" style="position:absolute; left:0%; right:79.08428720083248%; top:0%; bottom:0%;" id="wrap-1"><section class="wrapper" style="position:absolute; left:0%; right:0%; top:0%; bottom:67.64275256222547%;" id="wrap-2"></section><section class="wrapper" style="position:absolute; left:0%; right:0%; top:32.357247437774525%; bottom:0%;" id="wrap-3"></section></section><section class="wrapper" style="position:absolute; left:20.915712799167537%; right:0%; top:0%; bottom:0%;" id="wrap-4"><section ng-include="getURL()" class="wrapper" style="position:absolute; left:0%; right:86.8421052631579%; top:0%; bottom:0%;" id="wrap-5"></section><section class="wrapper" style="position:absolute; left:13.157894736842104%; right:0%; top:0%; bottom:0%;" id="wrap-6"></section></section>
-=======
-    <section class="wrapper active" style="position: absolute; left: 0%; right: 0%; top: 0%; bottom: 76.4890282131661%;" id="wrap-1"></section><section class="wrapper" style="position: absolute; left: 0%; right: 0%; top: 23.5109717868339%; bottom: 0%;" id="wrap-2"><section class="wrapper" style="position: absolute; left: 0%; right: 84.5993756503642%; top: 0%; bottom: 0%;" id="wrap-3"></section><section class="wrapper" style="position: absolute; left: 15.4006243496358%; right: 0%; top: 0%; bottom: 0%;" id="wrap-4"></section></section>
->>>>>>> origin/develop
+    <section class="wrapper" style="position:absolute; left:0%; right:0%; top:0%; bottom:69.39970717423132%;" id="wrap-1"><!-- ngInclude: getURL() --><section class="container ng-scope" ng-include="getURL()"><ul class="ng-scope">
+    <li>Hello</li>
+    <li>Logout</li>
+</ul>
+</section><button class="btn-add-module ng-scope" ng-click="addModule($event, '#module-select')"></button><button class="handle handle-bottom"></button></section><section class="wrapper" style="position:absolute; left:0%; right:0%; top:30.600292825768665%; bottom:0%;" id="wrap-2"><!-- ngInclude: getURL() --><section class="container ng-scope" ng-include="getURL()"><ul class="ng-scope">
+    <li>Hello</li>
+    <li>Logout</li>
+</ul>
+</section><section class="wrapper" style="position:absolute; left:0%; right:73.46514047866806%; top:0%; bottom:0%;" id="wrap-3"><section class="container" ng-include="getURL()">appel</section><button class="btn-add-module ng-scope" ng-click="addModule($event, '#module-select')"></button><button class="handle handle-right"></button></section><section class="wrapper" style="position:absolute; left:26.534859521331946%; right:0%; top:0%; bottom:0%;" id="wrap-4"><section class="container" ng-include="getURL()">peer</section><button class="btn-add-module ng-scope" ng-click="addModule($event, '#module-select')"></button></section></section>
