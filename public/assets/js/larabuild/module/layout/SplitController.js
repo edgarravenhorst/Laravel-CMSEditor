@@ -46,8 +46,8 @@ define(function(require) {
                 el2_left = (offsetX/$(moduleService.currentElem).outerWidth())*100;
             }
 
-            var html1 = '<section class="wrapper" style="position:absolute; left:' + el1_left + '%; right:'+ el1_right +'%; top:'+ el1_top +'%; bottom:'+ el1_bottom +'%;"><section class="container" ng-include="getURL()">appel</section></section>'
-            var html2 = '<section class="wrapper" style="position:absolute; left:' + el2_left + '%; right:'+ el2_right +'%; top:'+ el2_top +'%; bottom:'+ el2_bottom +'%;"><section class="container" ng-include="getURL()">peer</section></section>'
+            var html1 = '<section class="wrapper" style="position:absolute; left:' + el1_left + '%; right:'+ el1_right +'%; top:'+ el1_top +'%; bottom:'+ el1_bottom +'%;"><section class="container" ng-include="getURL()"></section></section>'
+            var html2 = '<section class="wrapper" style="position:absolute; left:' + el2_left + '%; right:'+ el2_right +'%; top:'+ el2_top +'%; bottom:'+ el2_bottom +'%;"><section class="container" ng-include="getURL()"></section></section>'
 
             $(moduleService.currentElem).append(html1);
             $(moduleService.currentElem).append(html2);
