@@ -7,8 +7,12 @@ define([], function() {
         ]
 
         $http.get('getTemplates').success(function(data) {
-          $scope.templateJson = data;
+            console.log(data);
+            $scope.templateJson = data;
+            $scope.loadViews();
         });
+
+
 
         $scope.getURL = function(){
             //console.log(this)
@@ -20,8 +24,6 @@ define([], function() {
                 $('#'+tmptPart.container).append($compile('<ng-include src="\'getViewByContainer/'+ tmptPart.view +'\'">peer</ng-include>')($scope))
             });
         }
-
-        $scope.loadViews();
 
     }
 
