@@ -19,10 +19,7 @@ Route::get('/', function()
 });
 
 
-Route::get('/getView/{name}', function($name)
-{
-    return View::make('larabuild.modules.' . $name . '.editor.settings');
-});
+Route::get('/getModuleView/{name}',  array('as' => 'getModuleView', 'uses' => 'ModuleController@getView'));
 
 Route::group(['before' => 'csrf'], function() {
     Route::post('/writelayoutfiles/', array('as' => 'writelayoutfiles', 'uses' => 'Mod_SplitController@writeLayoutFiles'));

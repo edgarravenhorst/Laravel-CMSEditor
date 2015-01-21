@@ -4,7 +4,7 @@ define([], function() {
         $scope.moduleView = false;
         $scope.activateModule = function($event, name) {
             $scope.activeModule = name;
-            $scope.moduleView = 'getView/' + name;
+            $scope.moduleView = 'getModuleView/' + name;
         };
 
         $scope.deActivateModule = function($event, name) {

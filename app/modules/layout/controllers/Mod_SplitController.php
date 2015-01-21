@@ -1,5 +1,7 @@
 <?php
 
+View::addLocation(app_path().'/modules/layout/views');
+
 class Mod_SplitController extends BaseController {
 
 
