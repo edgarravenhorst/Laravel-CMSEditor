@@ -21,5 +21,3 @@
         <button ng-click="add(orientation)">Add</button>
 
 </section>
-
-<script src="{{ URL::asset('assets/js/cms/modules/navigation/module.js') }}"></script>
