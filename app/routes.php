@@ -29,3 +29,5 @@ Route::group(['before' => 'csrf'], function() {
 });
 
 Route::get('/getViewByContainer/{container}',  array('as' => 'getViewByContainer', 'uses' => 'TemplateController@getView'));
+
+Route::get('/getTemplates/',  array('as' => 'getTemplates', 'uses' => 'TemplateController@getAll'));
