@@ -28,3 +28,4 @@ Route::group(['before' => 'csrf'], function() {
     Route::post('/writelayoutfiles/', array('as' => 'writelayoutfiles', 'uses' => 'Mod_SplitController@writeLayoutFiles'));
 });
 
+Route::get('/getViewByContainer/{container}',  array('as' => 'getViewByContainer', 'uses' => 'TemplateController@getView'));
