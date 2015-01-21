@@ -6,6 +6,7 @@
 
 @import "modules/layout/editor";
 @import "modules/navigation/editor";
+@import "template/setup";
 
 @mixin centerElement($type) {
     @if $type == "both"{

@@ -12,13 +12,6 @@ define([], function() {
             $scope.loadViews();
         });
 
-
-
-        $scope.getURL = function(){
-            //console.log(this)
-            //return 'getViewByContainer/wrap-1'
-        }
-
         $scope.loadViews = function(){
             angular.forEach($scope.templateJson, function(tmptPart, key) {
                 $('#'+tmptPart.container).append($compile('<ng-include src="\'getTemplateView/'+ tmptPart.view +'\'">peer</ng-include>')($scope))
