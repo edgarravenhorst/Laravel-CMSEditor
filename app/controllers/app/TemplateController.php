@@ -9,4 +9,10 @@ class TemplateController extends BaseController {
 
      }
 
+    public function getAll(){
+
+    return json_encode(Templates::all());
+
+    }
+
 }
