@@ -16,19 +16,20 @@
 
 
         <!--[if lt IE 9]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
     </head>
     <body  ng-controller="interfaceController" id='CMS_Editor'>
 
-        @yield('cmsWrapper')
-
+        <section ng-controller='templateController'>
+            @yield('cmsWrapper')
+        </section>
         <section id='cms-editor-interface'>
             @include('larabuild.layouts.interface.module-select')
         </section>
 
         <script data-main="{{ URL::asset('assets/js/larabuild/config') }}" src={{ URL::asset('assets/js/require.min.js') }}></script>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
     </body>
 
