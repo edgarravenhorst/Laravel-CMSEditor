@@ -17,6 +17,8 @@ class CreateTemplateTable extends Migration {
             $table->increments('id');
             $table->string('container');
             $table->string('view');
+            $table->string('module');
+            $table->text('config');
             $table->timestamps();
         });
 	}
